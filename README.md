@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Currency Explorer · Starter Project
 
 ## Integrantes
@@ -42,3 +43,6 @@ Registra aquí al menos dos decisiones tomadas por la pareja y explica por qué.
 
 ## Reflexión final (150–200 palabras)
 Explica el principal aprendizaje técnico, una dificultad relevante y una decisión que haya surgido del trabajo Driver/Navigator.
+=======
+# Currency-explorer
+>>>>>>> 3fee97408bfb890c0b5a7afe3441a2a6b7b47025
