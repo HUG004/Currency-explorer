@@ -31,8 +31,9 @@ async function convertirMoneda() {
   }
 
   // TODO · MISIÓN 04: reemplazar EUR y USD por los valores elegidos en los <select>.
-  const monedaOrigen = "EUR";
-  const monedaDestino = "USD";
+  // <<< COMPLETADO >>>
+  const monedaOrigen = origen.value;
+  const monedaDestino = destino.value;
 
   const url = `https://api.frankfurter.dev/v2/rate/${monedaOrigen}/${monedaDestino}`;
 
@@ -61,7 +62,16 @@ function intercambiarMonedas() {
   // 1) guardar temporalmente el valor de origen
   // 2) intercambiar origen.value y destino.value
   // 3) volver a calcular
-  mostrarError("Misión 06 pendiente: implementa el intercambio de monedas.");
+  // <<< COMPLETADO >>>
+
+  let origenActual = origen.value;
+
+  origen.value = destino.value;
+  destino.value = origenActual;
+
+  convertirMoneda();
+  
+  // mostrarError("Misión 06 pendiente: implementa el intercambio de monedas.");
 }
 
 // 4. UTILIDADES DE INTERFAZ
@@ -70,11 +80,3 @@ function mostrarError(mensaje) {
   resultadoTexto.textContent = mensaje;
   detalleTasa.textContent = "Revisa los datos e inténtalo nuevamente.";
 }
-
-// PISTA PARA EL RETO:
-// origen.value        -> moneda seleccionada como origen
-// destino.value       -> moneda seleccionada como destino
-// cantidad.value      -> texto escrito en el input
-// Number(...)         -> convierte texto a número
-// response.ok         -> indica si la respuesta HTTP fue satisfactoria
-// resultado.textContent -> permite modificar texto del DOM
