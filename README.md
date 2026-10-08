@@ -9,7 +9,7 @@ Aplicación web desarrollada con HTML, CSS y JavaScript Vanilla que permite conv
 | Integrante | Responsabilidades principales |
 |---|---|
 | Hugo Rivera | Misiones 7, 8 y 9: validaciones, estados de carga y manejo de errores |
-| Rigo | Misiones 4, 5 y 6: monedas dinámicas, conversión e intercambio |
+| Rigoberto Rodrigez | Misiones 4, 5 y 6: monedas dinámicas, conversión e intercambio |
 
 **Repositorio del proyecto:**
 
@@ -349,13 +349,13 @@ Completar esta tabla de acuerdo con la participación real de ambos integrantes:
 
 | Misión | Driver | Navigator |
 |---|---|---|
-| 4 | Por completar | Por completar |
-| 5 | Por completar | Por completar |
-| 6 | Por completar | Por completar |
-| 7 | Por completar | Por completar |
-| 8 | Por completar | Por completar |
-| 9 | Por completar | Por completar |
-| 10 | Por completar | Por completar |
+| 4 | Rigo | Hugo |
+| 5 | Rigo | Hugo |
+| 6 | Rigo | Hugo |
+| 7 | Hugo | Rigo |
+| 8 | Hugo | Rigo |
+| 9 | Hugo | Rigo |
+| 10 | Hugo | Rigo |
 
 ---
 
