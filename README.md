@@ -15,7 +15,6 @@ Aplicación web desarrollada con HTML, CSS y JavaScript Vanilla que permite conv
 
 https://github.com/HUG004/Currency-explorer
 
-> **Nota sobre Pair Programming:** Ambos integrantes deben conocer y poder explicar la implementación completa. La distribución anterior identifica las contribuciones registradas en GitHub, no sustituye la alternancia de roles Driver/Navigator solicitada en la actividad.
 
 ---
 
