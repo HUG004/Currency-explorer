@@ -22,11 +22,24 @@ async function convertirMoneda() {
   // Misiones guiadas 1-3: ya existe un flujo mínimo funcional EUR -> USD.
   // A partir de la Misión 4 debes convertirlo en una solución dinámica.
 
-  const valor = Number(cantidad.value);
+  //MISION 7. VALIDACION DE CANTIDADES
+  const textoCantidad = cantidad.value.trim();
+  const valor = Number(textoCantidad);
 
-  // TODO · MISIÓN 07: sustituir esta validación mínima por una validación completa.
-  if (!Number.isFinite(valor) || valor <= 0) {
-    mostrarError("Escribe una cantidad mayor que cero.");
+
+//campo vacio
+  if (textoCantidad ==="") {
+    mostrarError("Debes ingresar una cantidad.");
+    return;
+  }
+//numero invalido
+  if(!Number.isFinite(valor)){
+    mostrarError("Ingresa un número valido");
+    return;
+  }
+//cero o numero negativo
+  if(valor <= 0){
+    mostrarError("Ingresa un número mayor a cero");
     return;
   }
 
@@ -38,12 +51,38 @@ async function convertirMoneda() {
   const url = `https://api.frankfurter.dev/v2/rate/${monedaOrigen}/${monedaDestino}`;
 
   try {
-    // TODO · MISIÓN 08: activar un estado visual de carga antes de consultar.
+    // MISIÓN 08: Activar estado de carga
+  btnConvertir.disabled = true;
+  btnIntercambiar.disabled = true;
+  cantidad.disabled = true;
+  origen.disabled = true;
+  destino.disabled = true;
+
+  btnConvertir.textContent = "Consultando...";
+
+  resultado.classList.remove("error");
+  resultado.classList.add("loading"); // AQUÍ VA
+
+  resultadoTexto.textContent = "Consultando...";
+  detalleTasa.textContent = "Obteniendo el tipo de cambio...";
+
+  // MISIÓN 09: Consultar la API
     const respuesta = await fetch(url);
 
-    // TODO · MISIÓN 09: comprobar response.ok y lanzar un error si corresponde.
+    // Verificar que la respuesta HTTP sea correcta
+    if (!respuesta.ok) {
+      throw new Error(`Error HTTP: ${respuesta.status}`);
+    }
+
+    // Convertir la respuesta JSON a objeto JavaScript
     const datos = await respuesta.json();
 
+    // Verificar que la tasa recibida sea válida
+    if (typeof datos.rate !== "number" ||
+        !Number.isFinite(datos.rate) ||
+        datos.rate <= 0) {
+      throw new Error("La API devolvió un tipo de cambio inválido.");
+    }
     const conversion = valor * datos.rate;
 
     resultado.classList.remove("error");
@@ -51,10 +90,43 @@ async function convertirMoneda() {
     detalleTasa.textContent = `1 ${monedaOrigen} = ${datos.rate} ${monedaDestino} · ${datos.date}`;
 
   } catch (error) {
-    // TODO · MISIÓN 09: mejora el mensaje y analiza qué errores pueden llegar aquí.
-    mostrarError("No fue posible completar la consulta.");
-    console.error(error);
+  // MISIÓN 09: Manejo de errores
+
+  console.error("Error al consultar Frankfurter:", error);
+
+  if (error instanceof TypeError) {
+    mostrarError(
+      "Error de conexión. Verifica tu Internet e inténtalo nuevamente."
+    );
+
+  } else if (error.message.startsWith("Error HTTP:")) {
+    mostrarError(
+      `No se pudo consultar la API. ${error.message}`
+    );
+
+  } else if (error instanceof SyntaxError) {
+    mostrarError(
+      "La API devolvió una respuesta JSON incorrecta."
+    );
+
+  } else {
+    mostrarError(
+      error.message || "Ocurrió un error inesperado."
+    );
   }
+
+    } finally {
+      // MISIÓN 08: Restaurar controles
+      btnConvertir.disabled = false;
+      btnIntercambiar.disabled = false;
+      cantidad.disabled = false;
+      origen.disabled = false;
+      destino.disabled = false;
+
+      btnConvertir.textContent = "Convertir";
+        resultado.classList.remove("loading"); 
+
+    }
 }
 
 function intercambiarMonedas() {
