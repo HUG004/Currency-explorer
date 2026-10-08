@@ -1,4 +1,4 @@
-# 💱 Currency Explorer
+#  Currency Explorer
 
 **Caso práctico colaborativo — Pair Programming y consumo de una API pública**
 
