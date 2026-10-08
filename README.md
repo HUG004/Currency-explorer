@@ -2,8 +2,8 @@
 # Currency Explorer · Starter Project
 
 ## Integrantes
-- Estudiante A:
-- Estudiante B:
+Rivera Morales Hugo Baruch
+Rodriguez Hernandez Rigoberto
 
 ## Pair Programming
 | Misión | Driver | Navigator | Commit / evidencia |
