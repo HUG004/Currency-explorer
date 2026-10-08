@@ -393,16 +393,15 @@ Se utilizaron ramas y Pull Requests para conservar el historial de cambios y reu
 
 ---
 
-## 12. Reflexión final de pareja
+## Reflexión final de pareja
 
-**Pendiente de completar y validar por ambos integrantes.**
+Durante el desarrollo de Currency Explorer reforzamos nuestros conocimientos sobre JavaScript y el consumo de APIs públicas. Aprendimos a utilizar `fetch()` y `async/await` para realizar peticiones HTTP, interpretar respuestas JSON y mostrar los resultados mediante la manipulación del DOM. También comprendimos la importancia de validar los datos ingresados y manejar posibles errores de conexión para ofrecer una experiencia más confiable.
 
-La reflexión solicitada por el docente debe tener entre 150 y 200 palabras y explicar:
+Una de las principales dificultades fue integrar las funcionalidades desarrolladas en diferentes ramas de GitHub sin afectar el trabajo de ninguno de los integrantes. Para resolverlo, utilizamos una rama de desarrollo y realizamos Pull Requests que permitieron combinar y conservar los cambios.
 
-- Qué aprendieron sobre JavaScript, consumo de API y asincronía.
-- Cuál fue la principal dificultad técnica.
-- Qué decisión colaborativa fue importante.
-- Cómo participaron ambos integrantes en la resolución del problema.
+Una decisión colaborativa importante fue revisar el historial de commits y verificar la integración antes de actualizar definitivamente la rama principal. Esto nos permitió comprender mejor el uso de Git, las ramas y el trabajo colaborativo.
+
+Finalmente, reconocimos que desarrollar una aplicación no consiste únicamente en escribir código, sino también en probar su funcionamiento, documentar las decisiones y comprender las aportaciones de cada integrante.
 
 ---
 
